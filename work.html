@@ -1,0 +1,24 @@
+---
+title: हमारा कार्य
+nav: work
+permalink: /work/
+---
+{% assign projects = site.projects | sort: "order" %}
+{% include page-head.html label="हमारा कार्य · Our work" title="परियोजनाएं" text="Our long-running projects. Open one to see its events and photos." %}
+
+<section class="block">
+  <div class="wrap">
+    <div class="cards">
+      {% for p in projects %}
+      <a class="card-item" href="{{ p.url | relative_url }}">
+        {% if p.cover %}<img src="{{ p.cover | relative_url }}" alt="" loading="lazy">{% else %}<div class="ph">{{ p.title_en }}</div>{% endif %}
+        <div class="body">
+          {% if p.period %}<div class="meta-row"><span class="date">{{ p.period }}</span></div>{% endif %}
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.summary }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

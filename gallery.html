@@ -1,0 +1,24 @@
+---
+title: गैलरी
+nav: gallery
+permalink: /gallery/
+---
+{% assign all = site.events | sort: "date" | reverse %}
+{% include page-head.html label="गैलरी · Gallery" title="झलकियां" text="Photos from our events. Select an event title to read more." %}
+
+<section class="block">
+  <div class="wrap">
+    {% for e in all %}{% if e.photos and e.photos.size > 0 %}
+    <div class="year-group">
+      <div class="head-row">
+        <h2 style="font-size:1.5rem"><a href="{{ e.url | relative_url }}" style="text-decoration:none">{{ e.title }}</a></h2>
+        <span class="meta-row"><span class="date">{% include date.html date=e.date label=e.date_label %}</span></span>
+      </div>
+      <div class="gallery">
+        {% for p in e.photos %}<a href="{{ p | relative_url }}"><img src="{{ p | relative_url }}" alt="{{ e.title }} — फोटो {{ forloop.index }}" loading="lazy"></a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+  </div>
+</section>

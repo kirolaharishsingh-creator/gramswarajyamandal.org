@@ -1,0 +1,120 @@
+# Editor setup for Pages CMS (https://app.pagescms.org).
+# GSMS staff sign in with GitHub there and get simple forms to add events and projects.
+media:
+  input: images
+  output: /images
+
+content:
+  - name: events
+    label: कार्यक्रम · Events
+    type: collection
+    path: _events
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title_en, title, date, place ]
+      primary: title_en
+      sort: [ date ]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: शीर्षक (हिंदी) · Title in Hindi
+        type: string
+        required: true
+      - name: title_en
+        label: Title in English (also used for the page address)
+        type: string
+        required: true
+      - name: date
+        label: तिथि · Date of the event
+        type: date
+        required: true
+      - name: date_label
+        label: "Date text (optional). Use only if the exact day is unknown, e.g. 2022 or मार्च 2024"
+        type: string
+      - name: place
+        label: स्थान · Place (village / school / block, district)
+        type: string
+      - name: type
+        label: प्रकार · Type
+        type: select
+        required: true
+        options:
+          values:
+            - { value: workshop, label: कार्यशाला · Workshop }
+            - { value: contest, label: प्रतिस्पर्धा · Contest }
+            - { value: festival, label: उत्सव · Festival }
+            - { value: campaign, label: अभियान · Campaign }
+            - { value: plantation, label: वृक्षारोपण · Plantation }
+            - { value: training, label: प्रशिक्षण · Training }
+            - { value: meeting, label: बैठक · Meeting }
+            - { value: film, label: फिल्म · Film }
+            - { value: other, label: अन्य · Other }
+      - name: project
+        label: परियोजना · Project (optional)
+        type: select
+        options:
+          values:
+            - { value: green-talent-and-green-media, label: हरित बुद्धिमत्ता खोज व हरित मीडिया उत्सव }
+            - { value: science-for-women, label: महिलाओं के लिए हैंड्स-ऑन विज्ञान }
+            - { value: pine-needle-collection, label: पिरूल एकत्रीकरण }
+            - { value: virtual-green-media, label: वर्चुअल ग्रीन मीडिया }
+      - name: partner
+        label: सहयोग · Partner or funder (optional)
+        type: string
+      - name: cover
+        label: मुख्य फोटो · Main photo
+        type: image
+      - name: photos
+        label: सभी फोटो · All photos for the gallery
+        type: image
+        list: true
+      - name: youtube
+        label: YouTube link (optional)
+        type: string
+      - name: body
+        label: विवरण · Description (what happened, who took part, how many people)
+        type: rich-text
+
+  - name: projects
+    label: परियोजनाएं · Projects
+    type: collection
+    path: _projects
+    filename: "{primary}.md"
+    view:
+      fields: [ title_en, title, period ]
+      primary: title_en
+    fields:
+      - name: title
+        label: शीर्षक (हिंदी) · Title in Hindi
+        type: string
+        required: true
+      - name: title_en
+        label: Title in English (also used for the page address)
+        type: string
+        required: true
+      - name: order
+        label: Order on the Work page (1 = first)
+        type: number
+      - name: period
+        label: अवधि · Period, e.g. 2023 – जारी
+        type: string
+      - name: area
+        label: क्षेत्र · Area
+        type: string
+      - name: partner
+        label: सहयोग · Partner or funder
+        type: string
+      - name: cover
+        label: मुख्य फोटो · Main photo
+        type: image
+      - name: youtube
+        label: YouTube link (optional)
+        type: string
+      - name: summary
+        label: एक लाइन का सार · One-line summary (shown on cards)
+        type: string
+      - name: body
+        label: विवरण · Description
+        type: rich-text

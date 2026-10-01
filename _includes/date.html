@@ -1,0 +1,1 @@
+{% if include.label and include.label != "" %}{{ include.label }}{% else %}{% assign months = "जनवरी,फरवरी,मार्च,अप्रैल,मई,जून,जुलाई,अगस्त,सितंबर,अक्टूबर,नवंबर,दिसंबर" | split: "," %}{% assign m = include.date | date: "%-m" | minus: 1 %}{{ include.date | date: "%-d" }} {{ months[m] }} {{ include.date | date: "%Y" }}{% endif %}

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% assign t = site.event_types[page.type] %}
+{% assign proj = site.projects | where: "slug", page.project | first %}
+{% capture when %}{% include date.html date=page.date label=page.date_label %}{% endcapture %}
+{% include page-head.html crumb="कार्यक्रम · Events" crumb_url="/events/" title=page.title text=page.title_en %}
+
+<section class="block">
+  <div class="wrap">
+    <div class="detail">
+      <div class="prose">
+        {% if page.cover %}<img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
+        {{ content }}
+        {% if page.youtube %}<p><a class="more" href="{{ page.youtube }}" target="_blank" rel="noopener">YouTube पर वीडियो देखें · Watch the video</a></p>{% endif %}
+      </div>
+      <aside class="facts-box" aria-label="Event details">
+        <dl>
+          <div><dt>तिथि · Date</dt><dd>{{ when }}</dd></div>
+          {% if page.place %}<div><dt>स्थान · Place</dt><dd>{{ page.place }}</dd></div>{% endif %}
+          {% if t %}<div><dt>प्रकार · Type</dt><dd>{{ t.hi }} · {{ t.en }}</dd></div>{% endif %}
+          {% if page.partner %}<div><dt>सहयोग · Supported by</dt><dd>{{ page.partner }}</dd></div>{% endif %}
+          {% if proj %}<div><dt>परियोजना · Project</dt><dd><a href="{{ proj.url | relative_url }}">{{ proj.title }}</a></dd></div>{% endif %}
+        </dl>
+      </aside>
+    </div>
+    {% if page.photos and page.photos.size > 0 %}
+    <div class="head"><h2>तस्वीरें · Photos</h2></div>
+    <div class="gallery">
+      {% for p in page.photos %}<a href="{{ p | relative_url }}"><img src="{{ p | relative_url }}" alt="{{ page.title }} — फोटो {{ forloop.index }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <p><a class="more" href="{{ '/events/' | relative_url }}">← सभी कार्यक्रम · All events</a></p>
+  </div>
+</section>

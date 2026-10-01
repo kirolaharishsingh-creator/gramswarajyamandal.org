@@ -1,0 +1,9 @@
+<section class="page-head">
+  <div class="wrap">
+    {% if include.crumb %}<p class="crumbs"><a href="{{ include.crumb_url | relative_url }}">{{ include.crumb }}</a> /</p>{% endif %}
+    {% if include.label %}<p class="label">{{ include.label }}</p>{% endif %}
+    <h1>{{ include.title }}</h1>
+    {% if include.text %}<p>{{ include.text }}</p>{% endif %}
+  </div>
+  {% include ridges.html %}
+</section>

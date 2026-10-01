@@ -1,0 +1,47 @@
+---
+title: कार्यक्रम
+nav: events
+permalink: /events/
+---
+{% assign all = site.events | sort: "date" | reverse %}
+{% assign years = all | group_by_exp: "e", "e.date | date: '%Y'" %}
+{% include page-head.html label="कार्यक्रम एवं समाचार · Events" title="हमारे कार्यक्रम" text="Workshops, contests, campaigns and festivals, newest first." %}
+
+<section class="block">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="प्रकार के अनुसार छांटें · Filter by type">
+      <button type="button" data-f="all" aria-pressed="true">सभी · All</button>
+      {% for t in site.event_types %}{% assign used = all | where: "type", t[0] %}{% if used.size > 0 %}
+      <button type="button" data-f="{{ t[0] }}" aria-pressed="false">{{ t[1].hi }} · {{ t[1].en }}</button>{% endif %}{% endfor %}
+    </div>
+    {% for y in years %}
+    <div class="year-group" data-year="{{ y.name }}">
+      <h2>{{ y.name }}</h2>
+      <div class="cards">
+        {% for e in y.items %}{% include event-card.html event=e %}{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <p class="empty" id="empty" hidden>इस प्रकार का कोई कार्यक्रम नहीं मिला। · No events of this type.</p>
+  </div>
+</section>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filters button');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f, shown = 0;
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      document.querySelectorAll('.year-group').forEach(function (g) {
+        var any = false;
+        g.querySelectorAll('.card-item').forEach(function (c) {
+          var ok = f === 'all' || c.dataset.type === f;
+          c.hidden = !ok; if (ok) { any = true; shown++; }
+        });
+        g.hidden = !any;
+      });
+      document.getElementById('empty').hidden = shown > 0;
+    });
+  });
+})();
+</script>

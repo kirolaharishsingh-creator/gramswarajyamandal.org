@@ -1,0 +1,9 @@
+{% assign e = include.event %}{% assign t = site.event_types[e.type] %}
+<a class="card-item" href="{{ e.url | relative_url }}" data-type="{{ e.type | default: 'other' }}">
+  {% if e.cover %}<img src="{{ e.cover | relative_url }}" alt="" loading="lazy">{% else %}<div class="ph">ग्राम स्वराज्य मंडल</div>{% endif %}
+  <div class="body">
+    <div class="meta-row"><span class="date">{% include date.html date=e.date label=e.date_label %}</span>{% if t %}<span class="chip">{{ t.hi }}</span>{% endif %}</div>
+    <h3>{{ e.title }}</h3>
+    {% if e.place %}<p>{{ e.place }}</p>{% endif %}
+  </div>
+</a>

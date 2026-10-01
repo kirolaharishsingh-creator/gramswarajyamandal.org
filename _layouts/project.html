@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign proj_events = site.events | where: "project", page.slug | sort: "date" | reverse %}
+{% include page-head.html crumb="हमारा कार्य · Our work" crumb_url="/work/" title=page.title text=page.title_en %}
+
+<section class="block">
+  <div class="wrap">
+    <div class="detail">
+      <div class="prose">
+        {% if page.cover %}<img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
+        {{ content }}
+      </div>
+      <aside class="facts-box" aria-label="Project details">
+        <dl>
+          {% if page.period %}<div><dt>अवधि · Period</dt><dd>{{ page.period }}</dd></div>{% endif %}
+          {% if page.area %}<div><dt>क्षेत्र · Area</dt><dd>{{ page.area }}</dd></div>{% endif %}
+          {% if page.partner %}<div><dt>सहयोग · Supported by</dt><dd>{{ page.partner }}</dd></div>{% endif %}
+          {% if page.youtube %}<div><dt>वीडियो · Videos</dt><dd><a href="{{ page.youtube }}" target="_blank" rel="noopener">YouTube</a></dd></div>{% endif %}
+        </dl>
+      </aside>
+    </div>
+    {% if proj_events.size > 0 %}
+    <div class="head"><h2>इस परियोजना के कार्यक्रम</h2><p class="en">Events under this project</p></div>
+    <div class="cards">
+      {% for e in proj_events %}{% include event-card.html event=e %}{% endfor %}
+    </div>
+    {% endif %}
+    <p><a class="more" href="{{ '/work/' | relative_url }}">← सभी परियोजनाएं · All projects</a></p>
+  </div>
+</section>

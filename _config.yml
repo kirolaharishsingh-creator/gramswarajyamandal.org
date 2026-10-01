@@ -1,0 +1,46 @@
+title: ग्राम स्वराज्य मंडल, सोमेश्वर
+title_en: Gram Swarajya Mandal, Someshwar
+description: >-
+  ग्राम स्वराज्य मंडल, सोमेश्वर (GSMS) — अल्मोड़ा, उत्तराखंड में ग्रामीण विकास,
+  जल, पर्यावरण, विज्ञान संचार और आजीविका पर काम करने वाली स्वयंसेवी संस्था।
+url: https://gramswarajyamandal.org
+baseurl: ""
+lang: hi
+
+email: tgsmngo@gmail.com
+youtube: https://www.youtube.com/@gsms8365
+linkedin: https://www.linkedin.com/in/gsms-uk9099
+
+# Each event is one file in _events/, each long-running project one file in _projects/.
+collections:
+  events:
+    output: true
+    permalink: /events/:name/
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope: { path: "", type: events }
+    values: { layout: event }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: default }
+
+# Labels for the event "type" field (shown as chips and used by the filter).
+event_types:
+  workshop: { hi: कार्यशाला, en: Workshop }
+  contest: { hi: प्रतिस्पर्धा, en: Contest }
+  festival: { hi: उत्सव, en: Festival }
+  campaign: { hi: अभियान, en: Campaign }
+  plantation: { hi: वृक्षारोपण, en: Plantation }
+  training: { hi: प्रशिक्षण, en: Training }
+  meeting: { hi: बैठक, en: Meeting }
+  film: { hi: फिल्म, en: Film }
+  other: { hi: अन्य, en: Other }
+
+exclude:
+  - README.md
+  - EDITING.md
+  - gsms-logo-hd.png
