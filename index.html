@@ -4,75 +4,302 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gram Swarajya Mandal, Someshwar</title>
-<meta name="description" content="ग्राम स्वराज्य मंडल, सोमेश्वर की वेबसाइट निर्माणाधीन है। The Gram Swarajya Mandal, Someshwar (GSMS) website is under development.">
-<meta name="robots" content="noindex">
+<meta name="description" content="ग्राम स्वराज्य मंडल, सोमेश्वर (GSMS) — अल्मोड़ा, उत्तराखंड में ग्रामीण विकास, जल, पर्यावरण और आजीविका पर काम करने वाली स्वयंसेवी संस्था। Gram Swarajya Mandal, Someshwar: a rural development NGO in Almora, Uttarakhand.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600;700&display=swap">
 <style>
-/* Layout: one centered card on handloom khadi; a woven border band top and bottom. */
+/* Layout: hill terraces. Khadi-white page, green headings from the logo, orange for the one call to action; sections stack like terraced fields. */
 :root {
-  --khadi: #f4f6ee;
+  --khadi: #f6f7f0;
+  --panel: #ffffff;
   --ink: #1f2b1d;
-  --muted: #5f6655;
+  --muted: #5b6656;
   --leaf: #23864a;
-  --soil: #d98a1c;
-  --thread: #d5dcc4;
+  --leaf-deep: #17603a;
+  --lime: #86a603;
+  --sun: #d98a1c;
+  --line: #dfe5d2;
+  --on-leaf: #f4fbf3;
   --display: "Rozha One", "Noto Serif Devanagari", Georgia, serif;
   --body: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #6fcf8f; --soil: #f0aa48; --thread: #33382c; color-scheme: dark; }
+  :root:not([data-theme="light"]) {
+    --khadi: #141813; --panel: #1c211a; --ink: #e9ede2; --muted: #a8b29f; --leaf: #6fcf8f; --leaf-deep: #12402a;
+    --lime: #b5d43a; --sun: #f0aa48; --line: #2e362a; --on-leaf: #eaf7ec; color-scheme: dark;
+  }
 }
-:root[data-theme="dark"] { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #6fcf8f; --soil: #f0aa48; --thread: #33382c; color-scheme: dark; }
+:root[data-theme="dark"] {
+  --khadi: #141813; --panel: #1c211a; --ink: #e9ede2; --muted: #a8b29f; --leaf: #6fcf8f; --leaf-deep: #12402a;
+  --lime: #b5d43a; --sun: #f0aa48; --line: #2e362a; --on-leaf: #eaf7ec; color-scheme: dark;
+}
 
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0; background: var(--khadi); color: var(--ink);
-  font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
-  display: grid; grid-template-rows: auto 1fr auto;
-}
-.weave {
-  height: 14px;
-  background:
-    repeating-linear-gradient(90deg, var(--leaf) 0 10px, transparent 10px 14px, var(--soil) 14px 24px, transparent 24px 28px);
-  opacity: .85;
-}
-main { display: grid; place-items: center; padding: 3rem 16px; }
-.card { max-width: 34rem; width: 100%; display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
-.mark { width: min(100%, 26rem); height: auto; background: #fff; border-radius: 12px; padding: .75rem; box-shadow: 0 2px 12px rgb(0 0 0 / .10); }
-.place { margin: -.6rem 0 0; font-size: 1rem; color: var(--muted); }
-h1 { margin: 0; font-family: var(--display); font-weight: 400; line-height: 1.15; font-size: clamp(2.4rem, 9vw, 3.6rem); color: var(--leaf); text-wrap: balance; }
-.en-name { margin: -.6rem 0 0; font-size: .95rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-.rule { width: 4rem; height: 2px; background: var(--soil); border: 0; margin: .25rem 0; }
-.status { margin: 0; font-size: 1.35rem; font-weight: 600; text-wrap: balance; }
-.status span { display: block; font-size: 1.05rem; font-weight: 400; color: var(--muted); }
-.note { margin: 0; color: var(--muted); max-width: 28rem; }
-.pill { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .9rem; border: 1px solid var(--thread); border-radius: 999px; font-size: .9rem; color: var(--muted); }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--soil); animation: pulse 1.8s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: .3; } }
-@media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
-footer { text-align: center; padding: 1rem 16px 1.25rem; font-size: .85rem; color: var(--muted); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--khadi); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.65; }
+img { max-width: 100%; }
+a { color: var(--leaf); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.2; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 66rem; margin-inline: auto; padding-inline: 16px; }
+@media (min-width: 720px) { .wrap { padding-inline: 32px; } }
+.en { color: var(--muted); font-size: .95em; }
+.label { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--sun); }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; padding-block: .55rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); }
+.brand img { width: 38px; height: auto; border-radius: 6px; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 1.15rem; line-height: 1.1; }
+.brand small { display: block; font-size: .72rem; color: var(--muted); letter-spacing: .06em; }
+.top nav { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .95rem; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover { color: var(--leaf); }
+
+/* Hero */
+.hero { background: var(--leaf-deep); color: var(--on-leaf); position: relative; overflow: hidden; }
+.hero .wrap { display: grid; gap: 2rem; padding-block: 3.5rem 4.5rem; align-items: center; grid-template-columns: 1fr; position: relative; }
+@media (min-width: 860px) { .hero .wrap { grid-template-columns: 1.2fr 1fr; } }
+.hero .wrap > * { min-width: 0; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); line-height: 1.08; }
+.hero .tag { font-size: clamp(1.15rem, 2.4vw, 1.4rem); max-width: 34rem; margin-top: 1rem; opacity: .95; }
+.hero .tag span { display: block; font-size: .85em; opacity: .8; margin-top: .25rem; }
+.hero .facts { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; margin-top: 1.75rem; font-size: .95rem; }
+.hero .facts b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-height: 1.1; color: var(--lime); }
+.btns { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.btn { display: inline-block; padding: .65rem 1.3rem; border-radius: 999px; font-weight: 600; text-decoration: none; }
+.btn.primary { background: var(--sun); color: #1f1606; }
+.btn.ghost { border: 1px solid currentColor; color: var(--on-leaf); }
+.logo-card { background: #fff; border-radius: 16px; padding: 1.1rem; box-shadow: 0 10px 30px rgb(0 0 0 / .25); justify-self: center; width: min(100%, 26rem); }
+.logo-card img { display: block; width: 100%; height: auto; }
+.ridges { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 70px; display: block; }
+
+/* Sections */
+section.block { padding-block: 4.5rem 1rem; }
+section.block > .wrap { display: grid; gap: 2rem; }
+.head { display: grid; gap: .4rem; max-width: 44rem; }
+.head h2 { font-size: clamp(2rem, 4.6vw, 2.8rem); color: var(--leaf); }
+
+.about { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .about { grid-template-columns: 1.4fr 1fr; } }
+.about > * { min-width: 0; }
+.prose { display: grid; gap: 1rem; max-width: 40rem; }
+.record { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.4rem; display: grid; gap: .9rem; align-content: start; }
+.record h3 { font-size: 1.3rem; }
+.record dl { margin: 0; display: grid; gap: .7rem; }
+.record dt { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.record dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.work { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.work li { background: var(--panel); padding: 1.5rem; display: grid; gap: .5rem; align-content: start; }
+.work svg { width: 40px; height: 40px; }
+.work h3 { font-size: 1.35rem; }
+.work p { color: var(--muted); font-size: .97rem; }
+
+.partners { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.partner { border-top: 3px solid var(--lime); padding-top: .9rem; display: grid; gap: .25rem; }
+.partner b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; color: var(--leaf); }
+.partner span { color: var(--muted); font-size: .95rem; }
+
+.sectors { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+.sectors li { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: .3rem .9rem; font-size: .93rem; }
+
+.contact { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .contact { grid-template-columns: 1fr 1fr; } }
+.contact > * { min-width: 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; display: grid; gap: .75rem; align-content: start; }
+.card h3 { font-size: 1.35rem; }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.hours td { padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 600; }
+.hours tr.closed td:last-child { color: var(--muted); font-weight: 400; }
+
+footer { margin-top: 5rem; background: var(--leaf-deep); color: var(--on-leaf); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding-block: 2rem; font-size: .92rem; }
+footer b { font-family: var(--display); font-weight: 400; font-size: 1.2rem; }
+footer p { opacity: .85; }
 </style>
 </head>
 <body>
-<div class="weave" aria-hidden="true"></div>
-<main>
-  <div class="card">
-    <img class="mark" src="gsms-logo.png" width="1200" height="573" alt="Gram Swarajya Mandal, Someshwar (GSMS) logo">
-    <h1>ग्राम स्वराज्य मंडल</h1>
-    <p class="place">सोमेश्वर</p>
-    <hr class="rule">
-    <p class="status">हमारी वेबसाइट निर्माणाधीन है<span>Our website is under development</span></p>
-    <p class="note">हम जल्द ही यहां अपने कार्य और गतिविधियों की जानकारी साझा करेंगे। कृपया कुछ समय बाद फिर पधारें।<br>We will share our work here soon. Please visit again.</p>
-    <span class="pill"><span class="dot" aria-hidden="true"></span>जल्द आ रहा है · Coming soon</span>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.png" alt="" width="38" height="45"><span><b>ग्राम स्वराज्य मंडल</b><small>SOMESHWAR · GSMS</small></span></a>
+    <nav aria-label="मुख्य मेनू">
+      <a href="#parichay">परिचय</a>
+      <a href="#karya">हमारा कार्य</a>
+      <a href="#sahyog">सहयोगी</a>
+      <a href="#sampark">संपर्क</a>
+    </nav>
   </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="label" style="color:var(--lime)">सोमेश्वर, अल्मोड़ा · उत्तराखंड</p>
+        <h1 id="hero-title">ग्राम स्वराज्य मंडल</h1>
+        <p class="tag">गांवों की अपनी ताकत से ग्रामीण विकास, जल, पर्यावरण और आजीविका के लिए चार दशकों से अधिक समय से कार्यरत।<span>Working for over four decades on rural development, water, environment and livelihoods in the hills of Almora.</span></p>
+        <div class="facts">
+          <div><b>1967</b>स्थापना · Founded</div>
+          <div><b>40+</b>वर्षों का कार्य · Years of work</div>
+          <div><b>सोमेश्वर</b>अल्मोड़ा जिला</div>
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="#sampark">संपर्क करें · Contact us</a>
+          <a class="btn ghost" href="#karya">हमारा कार्य देखें</a>
+        </div>
+      </div>
+      <div class="logo-card"><img src="gsms-logo.png" width="1200" height="573" alt="Gram Swarajya Mandal, Someshwar (GSMS) logo"></div>
+    </div>
+    <svg class="ridges" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 50 L160 22 L300 44 L470 10 L640 40 L800 18 L960 46 L1130 14 L1290 38 L1440 20 V70 H0 Z" fill="var(--lime)" opacity=".35"/>
+      <path d="M0 62 L200 40 L380 58 L560 34 L760 60 L940 38 L1120 60 L1300 42 L1440 56 V70 H0 Z" fill="var(--khadi)"/>
+    </svg>
+  </section>
+
+  <section class="block" id="parichay">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">परिचय · About us</p>
+        <h2>गांव से शुरू होता है स्वराज</h2>
+      </div>
+      <div class="about">
+        <div class="prose">
+          <p>ग्राम स्वराज्य मंडल, सोमेश्वर (GSMS) अल्मोड़ा जिले की एक पुरानी और पंजीकृत स्वयंसेवी संस्था है। संस्था चार दशकों से अधिक समय से सोमेश्वर क्षेत्र के गांवों में सामुदायिक जागरूकता, ग्रामोद्योग को बढ़ावा देने और टिकाऊ स्थानीय आजीविका पर काम कर रही है।</p>
+          <p>संस्था ने नाबार्ड, स्वजल, जल निगम और विज्ञान एवं प्रौद्योगिकी विभाग जैसी राज्य और राष्ट्रीय संस्थाओं के सहयोग से कई कार्यक्रमों का समन्वय और क्रियान्वयन किया है।</p>
+          <p class="en">Gram Swarajya Mandal, Someshwar (GSMS) is a long-standing registered NGO in Almora district. For over four decades it has worked with villages around Someshwar on community awareness, village industries and sustainable local livelihoods, and has run programmes backed by NABARD, SWAJAL, Jal Nigam and the Department of Science and Technology.</p>
+        </div>
+        <aside class="record" aria-label="Registration details">
+          <h3>पंजीकरण · Registration</h3>
+          <dl>
+            <div><dt>स्थापना · Established</dt><dd>1967</dd></div>
+            <div><dt>प्रकार · Type</dt><dd>पंजीकृत सोसाइटी · Registered Society</dd></div>
+            <div><dt>सोसाइटी पंजीकरण सं. · Registration no.</dt><dd>133/1967-68</dd></div>
+            <div><dt>NGO Darpan ID</dt><dd>UA/2009/0010860</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="karya">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">हमारा कार्य · Our work</p>
+        <h2>हम क्या करते हैं</h2>
+        <p class="en">The main areas GSMS works in across the villages of Someshwar.</p>
+      </div>
+      <ul class="work">
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 32 L20 10 L34 32 Z" fill="none" stroke="var(--leaf)" stroke-width="2.5" stroke-linejoin="round"/><rect x="16" y="22" width="8" height="10" fill="var(--sun)"/></svg>
+          <h3>ग्रामीण विकास</h3>
+          <p>सामुदायिक जागरूकता और गांव स्तर पर विकास के कार्यक्रम। <span class="en">Rural development and community awareness.</span></p>
+        </li>
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="20" r="6" fill="none" stroke="var(--leaf)" stroke-width="2.5"/><circle cx="27" cy="20" r="6" fill="var(--sun)"/><path d="M6 33 H34" stroke="var(--leaf)" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <h3>ग्रामोद्योग और आजीविका</h3>
+          <p>ग्रामोद्योग को बढ़ावा और टिकाऊ स्थानीय आजीविका। <span class="en">Village industries and sustainable livelihoods.</span></p>
+        </li>
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6 C26 15 30 20 30 25 A10 10 0 0 1 10 25 C10 20 14 15 20 6 Z" fill="none" stroke="var(--leaf)" stroke-width="2.5"/><path d="M15 26 A5 5 0 0 0 20 31" stroke="var(--sun)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+          <h3>पेयजल और स्वच्छता</h3>
+          <p>स्वजल और जल निगम के सहयोग से पेयजल कार्यक्रम। <span class="en">Drinking water programmes with SWAJAL and Jal Nigam.</span></p>
+        </li>
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 V18" stroke="var(--leaf)" stroke-width="2.5" stroke-linecap="round"/><path d="M20 20 C12 20 8 14 8 8 C15 8 20 12 20 20 Z" fill="var(--leaf)"/><path d="M20 24 C27 24 32 19 32 13 C25 13 20 17 20 24 Z" fill="var(--sun)"/></svg>
+          <h3>पर्यावरण संरक्षण</h3>
+          <p>वृक्षारोपण अभियान, जागरूकता कार्यक्रम और ग्रीन मीडिया फेस्टिवल। <span class="en">Tree planting drives, awareness events and green media festivals.</span></p>
+        </li>
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="13" r="6" fill="none" stroke="var(--leaf)" stroke-width="2.5"/><path d="M9 34 C9 26 14 22 20 22 C26 22 31 26 31 34" fill="none" stroke="var(--leaf)" stroke-width="2.5" stroke-linecap="round"/><circle cx="31" cy="10" r="3" fill="var(--sun)"/></svg>
+          <h3>युवा मार्गदर्शन</h3>
+          <p>पर्यावरण संरक्षण पर युवाओं के लिए मार्गदर्शन कार्यक्रम। <span class="en">Guidance programmes for young people on conservation.</span></p>
+        </li>
+        <li>
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M16 6 V16 L8 31 A3 3 0 0 0 11 34 H29 A3 3 0 0 0 32 31 L24 16 V6" fill="none" stroke="var(--leaf)" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 26 H28" stroke="var(--sun)" stroke-width="2.5"/></svg>
+          <h3>विज्ञान और प्रौद्योगिकी</h3>
+          <p>विज्ञान एवं प्रौद्योगिकी विभाग के सहयोग से कार्यक्रम। <span class="en">Programmes supported by the Department of Science and Technology.</span></p>
+        </li>
+      </ul>
+      <div class="head" style="margin-top:1rem">
+        <h3 style="font-size:1.3rem">कार्यक्षेत्र · All registered areas of work</h3>
+      </div>
+      <ul class="sectors">
+        <li>कृषि · Agriculture</li>
+        <li>बाल कल्याण · Children</li>
+        <li>दिव्यांगजन · Differently abled</li>
+        <li>आपदा प्रबंधन · Disaster management</li>
+        <li>पेयजल · Drinking water</li>
+        <li>शिक्षा एवं साक्षरता · Education &amp; literacy</li>
+        <li>पर्यावरण एवं वन · Environment &amp; forests</li>
+        <li>स्वास्थ्य एवं परिवार कल्याण · Health &amp; family welfare</li>
+        <li>लघु उद्यम · Micro &amp; small enterprises</li>
+        <li>ग्रामीण विकास एवं गरीबी उन्मूलन · Rural development</li>
+        <li>विज्ञान एवं प्रौद्योगिकी · Science &amp; technology</li>
+        <li>व्यावसायिक प्रशिक्षण · Vocational training</li>
+        <li>महिला सशक्तिकरण · Women's empowerment</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="sahyog">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">सहयोगी संस्थाएं · Programme partners</p>
+        <h2>जिनके साथ हमने काम किया</h2>
+        <p class="en">State and national bodies whose programmes GSMS has coordinated and implemented.</p>
+      </div>
+      <div class="partners">
+        <div class="partner"><b>नाबार्ड</b><span>NABARD — राष्ट्रीय कृषि और ग्रामीण विकास बैंक</span></div>
+        <div class="partner"><b>स्वजल</b><span>SWAJAL — ग्रामीण पेयजल एवं स्वच्छता परियोजना</span></div>
+        <div class="partner"><b>जल निगम</b><span>Jal Nigam — पेयजल योजनाएं</span></div>
+        <div class="partner"><b>DST</b><span>विज्ञान एवं प्रौद्योगिकी विभाग · Department of Science and Technology</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sampark">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">संपर्क · Contact</p>
+        <h2>हमसे मिलें</h2>
+      </div>
+      <div class="contact">
+        <div class="card">
+          <h3>पता · Address</h3>
+          <p>ग्राम स्वराज्य मंडल, सोमेश्वर<br>धौलारा, सोमेश्वर, जिला अल्मोड़ा<br>उत्तराखंड – 263637</p>
+          <p class="en">Dhoulara, Someshwar, Almora, Uttarakhand 263637<br>Near the Dwarahat–Almora–Kausani road</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Gram+Swarajya+Mandal+Someshwar+Almora" target="_blank" rel="noopener">Google Maps पर देखें · Open in Google Maps</a></p>
+        </div>
+        <div class="card">
+          <h3>कार्यालय समय · Office hours</h3>
+          <table class="hours">
+            <tbody>
+              <tr><td>सोमवार – शुक्रवार · Mon–Fri</td><td>10:00 AM – 5:00 PM</td></tr>
+              <tr class="closed"><td>शनिवार · Saturday</td><td>बंद · Closed</td></tr>
+              <tr class="closed"><td>रविवार · Sunday</td><td>बंद · Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>© <span id="y">2026</span> ग्राम स्वराज्य मंडल, सोमेश्वर · gramswarajyamandal.org</footer>
-<div class="weave" aria-hidden="true"></div>
+
+<footer>
+  <div class="wrap">
+    <div><b>ग्राम स्वराज्य मंडल, सोमेश्वर</b><p>Gram Swarajya Mandal, Someshwar (GSMS) · Almora, Uttarakhand</p></div>
+    <p>© <span id="y">2026</span> GSMS · gramswarajyamandal.org</p>
+  </div>
+</footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
