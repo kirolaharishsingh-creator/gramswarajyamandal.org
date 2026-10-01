@@ -102,6 +102,19 @@ section.block > .wrap { display: grid; gap: 2rem; }
 .work h3 { font-size: 1.35rem; }
 .work p { color: var(--muted); font-size: .97rem; }
 
+.projects { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+.project { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.project img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.project .body { padding: 1.25rem 1.4rem 1.4rem; display: grid; gap: .55rem; align-content: start; }
+.project .when { font-size: .8rem; font-weight: 700; letter-spacing: .08em; color: var(--sun); font-variant-numeric: tabular-nums; }
+.project h3 { font-size: 1.35rem; }
+.project p { font-size: .97rem; }
+.project .meta { font-size: .88rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: .55rem; }
+.gallery { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.gallery .wide { grid-column: 1 / -1; aspect-ratio: 16 / 6; }
+.links { display: grid; gap: .45rem; }
+.links a { font-weight: 600; overflow-wrap: anywhere; }
 .partners { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .partner { border-top: 3px solid var(--lime); padding-top: .9rem; display: grid; gap: .25rem; }
 .partner b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; color: var(--leaf); }
@@ -134,6 +147,7 @@ footer p { opacity: .85; }
     <nav aria-label="मुख्य मेनू">
       <a href="#parichay">परिचय</a>
       <a href="#karya">हमारा कार्य</a>
+      <a href="#pariyojna">परियोजनाएं</a>
       <a href="#sahyog">सहयोगी</a>
       <a href="#sampark">संपर्क</a>
     </nav>
@@ -250,6 +264,64 @@ footer p { opacity: .85; }
     </div>
   </section>
 
+  <section class="block" id="pariyojna">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">परियोजनाएं · Projects</p>
+        <h2>हाल की परियोजनाएं</h2>
+        <p class="en">Recent work in Almora and Chamoli districts.</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <img src="images/green-talent-contest.jpg" alt="हरित बुद्धिमत्ता खोज प्रतिस्पर्धा में एक छात्रा औषधीय पौधों का मॉडल प्रस्तुत करती हुई" loading="lazy">
+          <div class="body">
+            <span class="when">2023 – जारी · Ongoing</span>
+            <h3>हरित बुद्धिमत्ता खोज प्रतिस्पर्धा व हरित मीडिया उत्सव</h3>
+            <p>विज्ञान लोकप्रियकरण हेतु युवाओं का पथ प्रदर्शन। चमोली जिले के थराली व देवाल विकासखंडों के 10 चयनित स्थानों पर छात्रों के लिए प्रतिस्पर्धाएं, और विजेताओं का सम्मान हरित मीडिया उत्सवों में। पहली प्रतिस्पर्धा 23 दिसंबर 2023 को राजकीय इंटर कॉलेज लोल्टी में हुई, जिसमें 50 से अधिक छात्रों ने भाग लिया।</p>
+            <p class="en">Green Talent Hunt contests and Green Media Festivals to bring science to young people in 10 locations across Tharali and Deval blocks.</p>
+            <p class="meta">वित्तपोषण · Funded by: राष्ट्रीय विज्ञान प्रौद्योगिकी एवं संचार परिषद (NCSTC), विज्ञान एवं प्रौद्योगिकी विभाग, नई दिल्ली</p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="images/housewives-science-workshop.jpg" alt="ग्वालदम क्षेत्र में गृहणियों के लिए विज्ञान कार्यशाला" loading="lazy">
+          <div class="body">
+            <span class="when">2022</span>
+            <h3>गृहणियों के लिए हैंड्स-ऑन विज्ञान कार्यशाला</h3>
+            <p>हिमालय के ग्वालदम क्षेत्र (देवाल विकासखंड, चमोली) में गृहणियों के बीच वर्चुअल ग्रीन मीडिया के माध्यम से वैज्ञानिक सोच और जागरूकता बढ़ाने के लिए तीन दिवसीय कार्यशाला और फील्ड अभियान।</p>
+            <p class="en">A three-day hands-on science workshop and field campaign for housewives in the Gwaldam region of Chamoli.</p>
+            <p class="meta">सहयोग · Supported by: NCSTC, विज्ञान एवं प्रौद्योगिकी विभाग (DST), नई दिल्ली</p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="images/pine-needle-3.jpg" alt="चीड़ के जंगल में पिरूल इकट्ठा करते ग्रामीण" loading="lazy">
+          <div class="body">
+            <span class="when">2025</span>
+            <h3>पिरूल (चीड़ की पत्ती) एकत्रीकरण कार्यक्रम</h3>
+            <p>चीड़ के जंगलों में गिरी पिरूल को गांव के लोगों के साथ मिलकर इकट्ठा करना, ताकि एक समस्या को अवसर में बदला जा सके। "Go Green, Grow Better."</p>
+            <p class="en">Pine needle collection with villagers, turning a forest problem into an opportunity.</p>
+            <p class="meta">सहयोग · With: उत्तराखंड वन विभाग · Himalayan Greenfuel</p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="images/community-women.jpg" alt="ग्वालदम क्षेत्र में डिजिटल विज्ञान एवं संचार माध्यम अभियान में शामिल महिलाएं" loading="lazy">
+          <div class="body">
+            <span class="when">वर्चुअल ग्रीन मीडिया</span>
+            <h3>लघु फिल्में और डिजिटल विज्ञान संचार</h3>
+            <p>प्रकृति और मानव-जनित आपदाओं के हमारे जीवन पर प्रभाव जैसे विषयों पर लघु फिल्में, और गांवों में डिजिटल विज्ञान एवं संचार माध्यमों को बढ़ावा देने के अभियान।</p>
+            <p class="en">Short films on nature and man-made disasters, and campaigns promoting digital science communication.</p>
+            <p class="meta"><a href="https://www.youtube.com/@gsms8365" target="_blank" rel="noopener">YouTube पर फिल्में देखें · Watch on YouTube</a></p>
+          </div>
+        </article>
+      </div>
+      <div class="head" style="margin-top:1rem"><h3 style="font-size:1.3rem">झलकियां · Gallery</h3></div>
+      <div class="gallery">
+        <img src="images/pine-needle-1.jpg" alt="पिरूल इकट्ठा करते हुए" loading="lazy">
+        <img src="images/pine-needle-2.jpg" alt="पिरूल का ढेर बनाती महिला" loading="lazy">
+        <img src="images/green-talent-contest.jpg" alt="हरित बुद्धिमत्ता खोज प्रतिस्पर्धा" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="sahyog">
     <div class="wrap">
       <div class="head">
@@ -261,7 +333,9 @@ footer p { opacity: .85; }
         <div class="partner"><b>नाबार्ड</b><span>NABARD — राष्ट्रीय कृषि और ग्रामीण विकास बैंक</span></div>
         <div class="partner"><b>स्वजल</b><span>SWAJAL — ग्रामीण पेयजल एवं स्वच्छता परियोजना</span></div>
         <div class="partner"><b>जल निगम</b><span>Jal Nigam — पेयजल योजनाएं</span></div>
-        <div class="partner"><b>DST</b><span>विज्ञान एवं प्रौद्योगिकी विभाग · Department of Science and Technology</span></div>
+        <div class="partner"><b>DST · NCSTC</b><span>विज्ञान एवं प्रौद्योगिकी विभाग और राष्ट्रीय विज्ञान प्रौद्योगिकी एवं संचार परिषद, नई दिल्ली</span></div>
+        <div class="partner"><b>वन विभाग</b><span>Uttarakhand Forest Department — पिरूल एकत्रीकरण</span></div>
+        <div class="partner"><b>Himalayan Greenfuel</b><span>पिरूल एकत्रीकरण कार्यक्रम में सहयोगी</span></div>
       </div>
     </div>
   </section>
@@ -275,10 +349,25 @@ footer p { opacity: .85; }
       <div class="contact">
         <div class="card">
           <h3>पता · Address</h3>
-          <p>ग्राम स्वराज्य मंडल, सोमेश्वर<br>धौलारा, सोमेश्वर, जिला अल्मोड़ा<br>उत्तराखंड – 263637</p>
-          <p class="en">Dhoulara, Someshwar, Almora, Uttarakhand 263637<br>Near the Dwarahat–Almora–Kausani road</p>
+          <p>ग्राम स्वराज्य मंडल, सोमेश्वर<br>ग्राम जाल-धौलाड़, पोस्ट सोमेश्वर<br>जिला अल्मोड़ा, उत्तराखंड – 263637</p>
+          <p class="en">Village Jal-Dhaulad, P.O. Someshwar, District Almora, Uttarakhand 263637<br>Near the Dwarahat–Almora–Kausani road</p>
           <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Gram+Swarajya+Mandal+Someshwar+Almora" target="_blank" rel="noopener">Google Maps पर देखें · Open in Google Maps</a></p>
-          <p><a href="https://www.linkedin.com/in/gsms-uk9099" target="_blank" rel="noopener">LinkedIn पर जुड़ें · Follow us on LinkedIn</a></p>
+        </div>
+        <div class="card">
+          <h3>फोन और ईमेल · Phone &amp; email</h3>
+          <div class="links">
+            <a href="tel:+919456122972">+91 94561 22972</a>
+            <a href="tel:+919927424096">+91 99274 24096</a>
+            <a href="mailto:tgsmngo@gmail.com">tgsmngo@gmail.com</a>
+            <a href="mailto:tgsmngo@yahoo.com">tgsmngo@yahoo.com</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>सोशल मीडिया · Follow us</h3>
+          <div class="links">
+            <a href="https://www.youtube.com/@gsms8365" target="_blank" rel="noopener">YouTube · @gsms8365</a>
+            <a href="https://www.linkedin.com/in/gsms-uk9099" target="_blank" rel="noopener">LinkedIn · gsms-uk9099</a>
+          </div>
         </div>
         <div class="card">
           <h3>कार्यालय समय · Office hours</h3>
@@ -298,7 +387,7 @@ footer p { opacity: .85; }
 <footer>
   <div class="wrap">
     <div><b>ग्राम स्वराज्य मंडल, सोमेश्वर</b><p>Gram Swarajya Mandal, Someshwar (GSMS) · Almora, Uttarakhand</p></div>
-    <p>© <span id="y">2026</span> GSMS · gramswarajyamandal.org · <a href="https://www.linkedin.com/in/gsms-uk9099" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a></p>
+    <p>© <span id="y">2026</span> GSMS · gramswarajyamandal.org · <a href="https://www.linkedin.com/in/gsms-uk9099" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a> · <a href="https://www.youtube.com/@gsms8365" target="_blank" rel="noopener" style="color:inherit">YouTube</a></p>
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
