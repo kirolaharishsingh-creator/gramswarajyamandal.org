@@ -7,16 +7,25 @@
 <meta name="robots" content="noindex">
 <style>
 html, body { height: 100%; }
-body { margin: 0; background: #8a8f8a; color: #333; font-family: system-ui, "Noto Sans Devanagari", sans-serif; line-height: 1.6; display: grid; place-items: center; padding: 16px; box-sizing: border-box; }
-.box { background: #f0f2f4; max-width: 40rem; width: 100%; padding: 2rem 1.5rem 2.25rem; border-radius: 6px; box-shadow: 0 6px 24px rgb(0 0 0 / .25); text-align: center; box-sizing: border-box; }
-h1 { margin: 0 0 1rem; font-weight: 400; font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.2; }
+body {
+  margin: 0; padding: 16px; box-sizing: border-box;
+  display: grid; place-items: center;
+  color: #333; font-family: system-ui, "Noto Sans Devanagari", sans-serif; line-height: 1.6;
+  background: #6f7a70 url("maintenance-bg.jpg") center top / cover no-repeat;
+}
+body::before { content: ""; position: fixed; inset: 0; background: rgb(60 66 60 / .45); }
+.box { position: relative; background: #f0f2f4; max-width: 40rem; width: 100%; padding: 2rem 1.5rem 2.25rem; border-radius: 6px; box-shadow: 0 8px 30px rgb(0 0 0 / .35); text-align: center; box-sizing: border-box; display: grid; gap: .9rem; }
+h1 { margin: 0; font-weight: 400; font-size: clamp(1.7rem, 5.5vw, 2.5rem); line-height: 1.25; }
+h1 span { display: block; font-size: .7em; color: #555; }
 p { margin: 0; font-size: 1.05rem; }
+p.en { color: #555; }
 </style>
 </head>
 <body>
 <div class="box" role="alert">
-<h1>तकनीकी समस्या</h1>
+<h1>तकनीकी समस्या<span>Technical issue</span></h1>
 <p>हम इस समस्या को ठीक कर रहे हैं और वेबसाइट जल्द ही फिर से उपलब्ध होगी। असुविधा के लिए खेद है।</p>
+<p class="en">We are fixing the issue and the website will be back soon. We apologise for the inconvenience.</p>
 </div>
 </body>
 </html>
