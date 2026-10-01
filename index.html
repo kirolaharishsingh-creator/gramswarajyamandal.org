@@ -43,8 +43,8 @@ body {
 }
 main { display: grid; place-items: center; padding: 3rem 16px; }
 .card { max-width: 34rem; width: 100%; display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
-.mark { width: 112px; height: auto; border-radius: 14px; box-shadow: 0 2px 10px rgb(0 0 0 / .12); }
-.place { margin: -.9rem 0 0; font-size: 1rem; color: var(--muted); }
+.mark { width: min(100%, 26rem); height: auto; background: #fff; border-radius: 12px; padding: .75rem; box-shadow: 0 2px 12px rgb(0 0 0 / .10); }
+.place { margin: -.6rem 0 0; font-size: 1rem; color: var(--muted); }
 h1 { margin: 0; font-family: var(--display); font-weight: 400; line-height: 1.15; font-size: clamp(2.4rem, 9vw, 3.6rem); color: var(--leaf); text-wrap: balance; }
 .en-name { margin: -.6rem 0 0; font-size: .95rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
 .rule { width: 4rem; height: 2px; background: var(--soil); border: 0; margin: .25rem 0; }
@@ -62,10 +62,9 @@ footer { text-align: center; padding: 1rem 16px 1.25rem; font-size: .85rem; colo
 <div class="weave" aria-hidden="true"></div>
 <main>
   <div class="card">
-    <img class="mark" src="logo.png" width="112" height="134" alt="ग्राम स्वराज्य मंडल का लोगो / Gram Swarajya Mandal logo">
+    <img class="mark" src="gsms-logo.png" width="1200" height="573" alt="Gram Swarajya Mandal, Someshwar (GSMS) logo">
     <h1>ग्राम स्वराज्य मंडल</h1>
-    <p class="en-name">Gram Swarajya Mandal (GSMS)</p>
-    <p class="place">सोमेश्वर · Someshwar</p>
+    <p class="place">सोमेश्वर</p>
     <hr class="rule">
     <p class="status">हमारी वेबसाइट निर्माणाधीन है<span>Our website is under development</span></p>
     <p class="note">हम जल्द ही यहां अपने कार्य और गतिविधियों की जानकारी साझा करेंगे। कृपया कुछ समय बाद फिर पधारें।<br>We will share our work here soon. Please visit again.</p>
