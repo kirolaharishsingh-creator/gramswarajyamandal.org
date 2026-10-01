@@ -3,29 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gram Swarajya Mandal</title>
-<meta name="description" content="ग्राम स्वराज्य मंडल की वेबसाइट निर्माणाधीन है। The Gram Swarajya Mandal website is under development.">
+<title>Gram Swarajya Mandal, Someshwar</title>
+<meta name="description" content="ग्राम स्वराज्य मंडल, सोमेश्वर की वेबसाइट निर्माणाधीन है। The Gram Swarajya Mandal, Someshwar (GSMS) website is under development.">
 <meta name="robots" content="noindex">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600&display=swap">
 <style>
 /* Layout: one centered card on handloom khadi; a woven border band top and bottom. */
 :root {
-  --khadi: #f2ede2;
-  --ink: #26301f;
+  --khadi: #f4f6ee;
+  --ink: #1f2b1d;
   --muted: #5f6655;
-  --leaf: #3d6b35;
-  --soil: #a35a2a;
-  --thread: #d9cfbb;
+  --leaf: #23864a;
+  --soil: #d98a1c;
+  --thread: #d5dcc4;
   --display: "Rozha One", "Noto Serif Devanagari", Georgia, serif;
   --body: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #8fbf7f; --soil: #e09a64; --thread: #33382c; color-scheme: dark; }
+  :root:not([data-theme="light"]) { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #6fcf8f; --soil: #f0aa48; --thread: #33382c; color-scheme: dark; }
 }
-:root[data-theme="dark"] { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #8fbf7f; --soil: #e09a64; --thread: #33382c; color-scheme: dark; }
+:root[data-theme="dark"] { --khadi: #171a14; --ink: #ece6d8; --muted: #a9ae9c; --leaf: #6fcf8f; --soil: #f0aa48; --thread: #33382c; color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -42,7 +43,8 @@ body {
 }
 main { display: grid; place-items: center; padding: 3rem 16px; }
 .card { max-width: 34rem; width: 100%; display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
-.mark { width: 72px; height: 72px; }
+.mark { width: 112px; height: auto; border-radius: 14px; box-shadow: 0 2px 10px rgb(0 0 0 / .12); }
+.place { margin: -.9rem 0 0; font-size: 1rem; color: var(--muted); }
 h1 { margin: 0; font-family: var(--display); font-weight: 400; line-height: 1.15; font-size: clamp(2.4rem, 9vw, 3.6rem); color: var(--leaf); text-wrap: balance; }
 .en-name { margin: -.6rem 0 0; font-size: .95rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
 .rule { width: 4rem; height: 2px; background: var(--soil); border: 0; margin: .25rem 0; }
@@ -60,21 +62,17 @@ footer { text-align: center; padding: 1rem 16px 1.25rem; font-size: .85rem; colo
 <div class="weave" aria-hidden="true"></div>
 <main>
   <div class="card">
-    <svg class="mark" viewBox="0 0 72 72" aria-hidden="true">
-      <circle cx="36" cy="36" r="33" fill="none" stroke="var(--leaf)" stroke-width="2"/>
-      <path d="M14 46 L36 22 L58 46 Z" fill="none" stroke="var(--leaf)" stroke-width="2.5" stroke-linejoin="round"/>
-      <rect x="31" y="34" width="10" height="12" fill="var(--soil)"/>
-      <path d="M10 50 H62" stroke="var(--soil)" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
+    <img class="mark" src="logo.png" width="112" height="134" alt="ग्राम स्वराज्य मंडल का लोगो / Gram Swarajya Mandal logo">
     <h1>ग्राम स्वराज्य मंडल</h1>
-    <p class="en-name">Gram Swarajya Mandal</p>
+    <p class="en-name">Gram Swarajya Mandal (GSMS)</p>
+    <p class="place">सोमेश्वर · Someshwar</p>
     <hr class="rule">
     <p class="status">हमारी वेबसाइट निर्माणाधीन है<span>Our website is under development</span></p>
     <p class="note">हम जल्द ही यहां अपने कार्य और गतिविधियों की जानकारी साझा करेंगे। कृपया कुछ समय बाद फिर पधारें।<br>We will share our work here soon. Please visit again.</p>
     <span class="pill"><span class="dot" aria-hidden="true"></span>जल्द आ रहा है · Coming soon</span>
   </div>
 </main>
-<footer>© <span id="y">2026</span> ग्राम स्वराज्य मंडल · gramswarajyamandal.org</footer>
+<footer>© <span id="y">2026</span> ग्राम स्वराज्य मंडल, सोमेश्वर · gramswarajyamandal.org</footer>
 <div class="weave" aria-hidden="true"></div>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
